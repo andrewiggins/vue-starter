@@ -1,0 +1,48 @@
+{
+  "name": "vue-starter",
+  "version": "0.0.0",
+  "description": "Barebones starter for a Vue.JS 3 project",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env MINIFY=1  rollup -c",
+    "build:watch": "rollup -c -w",
+    "dev": "run-p build:watch serve",
+    "serve": "sirv --dev",
+    "start": "run-s dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewiggins/vue-next-playground"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,html,vue}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-replace": "^2.3.3",
+    "@vue/compiler-sfc": "^3.0.0-rc.5",
+    "cross-env": "^7.0.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "rollup": "^2.26.3",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-visualizer": "^4.1.0",
+    "rollup-plugin-vue": "^6.0.0-beta.10",
+    "sirv-cli": "^1.0.6",
+    "vue": "^3.0.0-rc.5"
+  }
+}
