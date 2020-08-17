@@ -59,7 +59,7 @@ function generateConfig(
 export default generateConfig(
 	"dist",
 	"src/index.js",
-	process.env.MINIFY == "1",
+	process.env.NODE_ENV == "production",
 	() => [
 		copy({
 			targets: [{ src: "src/index.html", dest: "dist" }],

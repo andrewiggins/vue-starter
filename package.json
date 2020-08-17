@@ -4,7 +4,7 @@
   "description": "Barebones starter for a Vue.JS 3 project",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env MINIFY=1  rollup -c",
+    "build": "cross-env NODE_ENV=production rollup -c",
     "build:watch": "rollup -c -w",
     "dev": "run-p build:watch serve",
     "serve": "sirv --dev",
