@@ -5,6 +5,7 @@ import copy from "rollup-plugin-copy";
 import { terser } from "rollup-plugin-terser";
 import vuePlugin from "rollup-plugin-vue";
 import visualizer from "rollup-plugin-visualizer";
+import postcss from "rollup-plugin-postcss";
 
 /**
  * @typedef {"development" | "production"} Environment
@@ -30,6 +31,9 @@ function generateConfig(
 			"process.env.NODE_ENV": JSON.stringify(environment),
 		}),
 		vuePlugin(),
+		postcss({
+			// extract: true
+		}),
 		nodeResolve({
 			extensions: [".mjs", ".js", ".jsx", ".json", ".node"],
 		}),
